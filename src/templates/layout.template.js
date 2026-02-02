@@ -15,7 +15,7 @@ export function LayoutTemplate({ session, activeRoute, title = "", subtitle = ""
     Construye los links del navbar según el rol.
 
     - Admin: solo ve Dashboard
-    - User: ve Menu, My Orders, Profile
+    - User: ve tasks, Profile
 
     activeRoute se usa para aplicar la clase "active" y resaltar el link actual.
   */

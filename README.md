@@ -2,6 +2,15 @@
 
 PRUEBA DE DESEMPEÑO – MÓDULO 3
 CRUDTASK
+
+Es una SPA en Vanilla JS
+Usa JSON Server como API falsa
+Autenticación simulada con LocalStorage
+Separación clara por roles
+User solo ve sus tareas
+Admin ve métricas y todo el sistema
+
+
 Diseños proporcionados en Figma:
 https://www.figma.com/design/K3PmKIOlfEsjnbwP54Yc2x/Sin-t%C3%ADtulo?node-
 id=33-2&t=Q7CZdp6XFatVh7wZ-1

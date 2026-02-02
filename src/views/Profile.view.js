@@ -2,42 +2,28 @@ import { mount } from "../utils/dom.js";
 import { LayoutTemplate } from "../templates/layout.template.js";
 import { fmt } from "../utils/format.js";
 import { store } from "../state/store.js";
-import { ordersService } from "../services/orders.service.js";
+import { tasksService } from "../services/tasks.service.js";
 
 /*
   ProfileView
-
-  Responsabilidad:
-  - Mostrar la información del usuario logueado
-  - Calcular estadísticas básicas del usuario
-    (cantidad de pedidos y total gastado)
-  - Cumplir el requisito de "Vista de perfil"
+  - Muestra la información del usuario logueado
 */
 export async function ProfileView() {
   const { session } = store.getState();
 
   /*
-    Obtiene los pedidos del usuario actual desde la API.
-    Se usa listByUser para evitar traer pedidos de otros usuarios.
+    Obtiene las tareas del usuario actual desde la API.
+    Se usa listByUser para evitar traer tareas de otros usuarios.
   */
-  const orders = await ordersService.listByUser(session.id);
+  const tasks = await tasksService.listByUser(session.id);
 
   /*
-    Estadísticas del perfil:
-
-    - count: número total de pedidos
-    - totalSpent: suma del total de todos los pedidos
-
-    reduce (implícito en el cálculo):
-    Se acumula el total gastado recorriendo todos los pedidos.
+    count: número total de tareas
   */
-  const count = orders.length;
-  const totalSpent = orders.reduce((acc, o) => acc + Number(o.total || 0), 0);
+  const count = tasks.length;
 
   /*
-    Render del layout:
-    - Columna izquierda: información del usuario
-    - Columna derecha: estadísticas
+    Render del layout
   */
   mount(LayoutTemplate({
     session,
@@ -63,19 +49,10 @@ export async function ProfileView() {
           <h3 style="margin:0 0 8px">Stats</h3>
 
           <div class="totalRow">
-            <span>Orders</span>
+            <span>Tasks</span>
             <span style="font-weight:900">${count}</span>
           </div>
-
-          <div class="totalRow">
-            <span>Total Spent</span>
-            <span style="font-weight:900">${fmt.money(totalSpent)}</span>
-          </div>
-
-          <div class="sep"></div>
-          <p class="mini">
-            Optional advanced: total spent is calculated from your saved orders.
-          </p>
+          
         </div>
       </div>
     `

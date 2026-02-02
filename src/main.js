@@ -28,7 +28,7 @@ store.subscribe(() => {
 
 /*
   Enrutamiento SPA por hash:
-  - hashchange: cuando el usuario navega entre vistas (#/menu, #/orders, etc.)
+  - hashchange: cuando el usuario navega entre vistas (#/tasks, etc.)
   - load: render inicial al cargar la página
 */
 window.addEventListener("hashchange", router);

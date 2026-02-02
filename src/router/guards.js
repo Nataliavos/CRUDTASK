@@ -8,12 +8,12 @@ export function guard(route) {
 
   // con sesión: no volver a login
   if (session && route === "#/login") {
-    return session.role === "admin" ? "#/admin" : "#/menu";
+    return session.role === "admin" ? "#/admin" : "#/tasks";
   }
 
   // protección por rol
-  if (session?.role === "user" && route === "#/admin") return "#/menu";
-  if (session?.role === "admin" && ["#/menu", "#/orders", "#/profile"].includes(route)) return "#/admin";
+  if (session?.role === "user" && route === "#/admin") return "#/tasks";
+  if (session?.role === "admin" && ["#/tasks", "#/profile"].includes(route)) return "#/admin";
 
   return route;
 }
