@@ -1,0 +1,39 @@
+<div>
+    <div class="grid">
+        <div class="card pad">Total Tasks: ${total}</div>
+        <div class="card pad">Pending: ${pending}</div>
+        <div class="card pad">Completed: ${completed}</div>
+    </div>
+
+    <div class="card pad">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Due</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                ${
+                tasks.length === 0
+                ? `<tr>
+                    <td colspan="4">No tasks yet.</td>
+                </tr>`
+                : tasks.map( t => `
+                <tr>
+                    <td>${t.title}</td>
+                    <td>${t.status}</td>
+                    <td>${fmt.date(t.dueDate)}</td>
+                    <td>
+                        <a href="#/task/edit/${t.id}">Edit</a>
+                    </td>
+                </tr>
+                <tr>
+                    `).join("")
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -13,7 +13,7 @@ export const tasksService = {
   // Usado principalmente por el panel de administrador
   // JSON Server v1 beta usa _sort=-campo para orden descendente
   listAll() {
-    return http.get("/tasks?_sort=-createdAt"); 
+    return http.get(`/tasks?_sort=-createdAt`); 
   },
 
   // Obtiene las tareas de un usuario específico

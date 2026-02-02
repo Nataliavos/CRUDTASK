@@ -24,8 +24,7 @@ export function LayoutTemplate({ session, activeRoute, title = "", subtitle = ""
       <a href="#/admin" data-nav="#/admin" class="${activeRoute==="#/admin" ? "active" : ""}">Dashboard</a>
     `
     : `
-      <a href="#/menu" data-nav="#/menu" class="${activeRoute==="#/menu" ? "active" : ""}">Menu</a>
-      <a href="#/orders" data-nav="#/orders" class="${activeRoute==="#/orders" ? "active" : ""}">My Orders</a>
+      <a href="#/tasks" data-nav="#/tasks" class="${activeRoute==="#/tasks" ? "active" : ""}">My tasks</a>
       <a href="#/profile" data-nav="#/profile" class="${activeRoute==="#/profile" ? "active" : ""}">Profile</a>
     `;
 
@@ -37,13 +36,7 @@ export function LayoutTemplate({ session, activeRoute, title = "", subtitle = ""
   const right = session ? `<button class="btn small secondary" id="logoutBtn">Log Out</button>` : "";
 
   /*
-    Retorna el HTML completo:
-    - Topbar sticky (clase .topbar en CSS)
-    - Brand con link condicional:
-      - Si hay sesión admin: va a #/admin
-      - Si hay sesión user: va a #/menu
-      - Si no hay sesión: va a #/login
-    - Contenedor principal con title/subtitle opcionales y content inyectado por la vista
+    
   */
   return `
     <div class="topbar">

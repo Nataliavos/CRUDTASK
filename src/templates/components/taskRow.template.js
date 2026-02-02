@@ -1,7 +1,7 @@
 import { fmt } from "../../utils/format.js";
 import { StatusTagTemplate } from "./statusTag.template.js";
 
-export function OrderRowTemplate(order, isAdmin = false) {
+export function TaskRowTemplate(order, isAdmin = false) {
   return `
     <tr>
       <td>${order.id}</td>
@@ -13,4 +13,6 @@ export function OrderRowTemplate(order, isAdmin = false) {
       </td>
     </tr>
   `;
+
+
 }

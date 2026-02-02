@@ -72,4 +72,13 @@ export async function MyTasksView() {
       `
     }));
 
+  /*
+    Logout:
+    - Limpia la sesión del store
+    - Redirige al login
+  */
+  document.getElementById("logoutBtn")?.addEventListener("click", () => {
+    store.actions.clearSession();
+    window.location.hash = "#/login";
+  });
 }

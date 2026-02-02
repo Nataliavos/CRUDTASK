@@ -23,11 +23,12 @@ export async function AdminDashboardView() {
   // carga todas las tareas de la API
   const tasks = await tasksService.listAll();
 
+
   const total = tasks.length;
   const pending = tasks.filter(t => t.status === "pending").length;
   const completed = tasks.filter(t => t.status === "completed").length;
 
- 
+
   mount(LayoutTemplate({
     session,
     activeRoute: "#/admin",
@@ -41,5 +42,15 @@ export async function AdminDashboardView() {
       </div>
     `
   }));
+
+  /*
+    Logout:
+    - Limpia la sesión del store
+    - Redirige al login
+  */
+  document.getElementById("logoutBtn")?.addEventListener("click", () => {
+    store.actions.clearSession();
+    window.location.hash = "#/login";
+  });
 
 }
