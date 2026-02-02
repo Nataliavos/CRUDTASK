@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@restorapp.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Alex Student",
+      "email": "alex.edu@university.edu",
+      "role": "user"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Classic Beef Burger",
+      "price": 8.99,
+      "category": "burgers"
+    },
+    {
+      "id": 2,
+      "name": "Double Bacon Melt",
+      "price": 12.5,
+      "category": "burgers"
+    },
+    {
+      "id": 3,
+      "name": "Golden Fries",
+      "price": 3.99,
+      "category": "sides"
+    },
+    {
+      "id": 4,
+      "name": "Cola Zero",
+      "price": 2.5,
+      "category": "drinks"
+    },
+    {
+      "id": 5,
+      "name": "Donut Box",
+      "price": 6,
+      "category": "desserts"
+    },
+    {
+      "id": 6,
+      "name": "Pepperoni Slice",
+      "price": 4.5,
+      "category": "pizza"
+    },
+    {
+      "id": 999,
+      "name": "MARKER ITEM",
+      "price": 1,
+      "category": "test"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1680",
+      "userId": 2,
+      "items": [
+        {
+          "productId": 3,
+          "qty": 1,
+          "unitPrice": 3.99,
+          "name": "Golden Fries"
+        }
+      ],
+      "total": 4.31,
+      "status": "entregado",
+      "createdAt": "2026-02-02T01:05:55.959Z"
+    },
+    {
+      "id": "5341",
+      "userId": 2,
+      "items": [
+        {
+          "productId": 2,
+          "qty": 1,
+          "unitPrice": 12.5,
+          "name": "Double Bacon Melt"
+        }
+      ],
+      "total": 13.5,
+      "status": "entregado",
+      "createdAt": "2026-02-02T01:07:22.601Z"
+    },
+    {
+      "id": "7750",
+      "userId": 2,
+      "items": [
+        {
+          "productId": 3,
+          "qty": 1,
+          "unitPrice": 3.99,
+          "name": "Golden Fries"
+        }
+      ],
+      "total": 4.31,
+      "status": "entregado",
+      "createdAt": "2026-02-02T01:16:32.361Z"
+    },
+    {
+      "id": "7b469d4b-7a8c-4047-920d-6a8e7329a40c",
+      "userId": 2,
+      "items": [
+        {
+          "productId": 6,
+          "qty": 3,
+          "unitPrice": 4.5,
+          "name": "Pepperoni Slice"
+        }
+      ],
+      "total": 14.58,
+      "status": "pendiente",
+      "createdAt": "2026-02-02T12:30:05.986Z"
+    }
+  ]
+}

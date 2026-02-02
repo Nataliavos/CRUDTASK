@@ -1,1 +1,95 @@
 # CRUDTASK
+
+PRUEBA DE DESEMPEÑO – MÓDULO 3
+CRUDTASK
+Diseños proporcionados en Figma:
+https://www.figma.com/design/K3PmKIOlfEsjnbwP54Yc2x/Sin-t%C3%ADtulo?node-
+id=33-2&t=Q7CZdp6XFatVh7wZ-1
+1. Planteamiento del problema
+Eres un desarrollador web que ha recibido el encargo de desarrollar CRUDTASK, una
+aplicación dedicada a la gestión de tareas académicas.
+El sistema debe permitir:
+• A los usuarios, registrarse, iniciar sesión y gestionar sus tareas y su perfil.
+• A los administradores, gestionar tareas y supervisar la actividad del sistema.
+Actualmente no existe un sistema digital, por lo que se requiere desarrollar una
+aplicación web completa que simule el flujo real de gestión de tareas usando una API
+falsa con JSON Server.
+El diseño visual, estructura de pantallas y componentes UI ya están definidos en Figma
+(login, tareas, perfil, dashboard admin).
+2. Alcance del proyecto
+El coder deberá construir:
+✓ Sistema de autenticación simulado
+✓ Manejo de roles (user/admin)
+✓ Consumo de API falsa con JSON Server
+✓ Gestión de tareas
+✓ Panel administrativo con métricas
+✓ Persistencia de sesión
+✓ Separación clara entre vistas según rol
+ No se requiere backend real
+ No se requiere despliegue productivo (solo local)
+3. Roles del sistema
+Rol Descripción
+Usuario (user) Gestiona sus propias tareas
+Administrador (admin) Gestiona tareas y supervisa la actividad
+> Regla de negocio obligatoria:
+Un usuario con rol user NO puede acceder a vistas de admin, y un admin no usa vistas de
+usuario.
+4. Tecnologías obligatorias
+• HTML5
+• CSS3
+• Bootstrap 5, materialize , foundation, bulma, Tailwind CSS
+• JavaScript (Vanilla, sin frameworks)
+• JSON Server (API falsa)
+• LocalStorage o SessionStorage (manejo de sesión)
+5. Módulo Usuario – Funcionalidades obligatorias
+1. Registro
+a. Crear cuenta nueva
+b. Rol asignado automáticamente: user
+2. Login
+a. Validar credenciales contra JSON Server
+b. Guardar sesión
+3. Gestión de tareas
+a. Listar tareas
+b. Crear tareas
+c. Editar tareas
+d. Eliminar tareas
+4. Mis tareas
+a. Ver solo sus tareas
+b. Cambiar estado (pending, in progress, completed)
+5. Perfil de usuario
+a. Visualizar información personal
+b. Cerrar sesión
+6. Módulo Administrador – Funcionalidades obligatorias
+1. Login (mismo formulario)
+a. Detectar rol admin
+b. Redirigir a dashboard
+2. Dashboard
+Debe mostrar:
+a. Total de tareas registradas
+b. Tareas pendientes
+c. Tareas completadas
+d. Métricas generales del sistema
+3. Gestión de tareas
+a. Ver todas las tareas
+b. Editar cualquier tarea
+c. Eliminar tareas
+d. Cambiar estados
+4. Gestión de usuarios (opcional bonus)
+a. Visualizar usuarios registrados
+7. Reglas de seguridad y lógica
+• Rutas protegidas por rol
+• Si no hay sesión → redirigir a login
+• Validar que:
+o User solo vea sus tareas
+o Admin pueda ver todas
+• No se permite manipular datos directamente desde el navegador sin validación
+de rol
+8. Diseño UI
+• Seguir lo definido en Figma
+• Diseño responsivo
+• Vistas esperadas según imagen:
+o Login
+o Registro
+o Gestión de tareas
+o Perfil de usuario
+o Dashboard admin
